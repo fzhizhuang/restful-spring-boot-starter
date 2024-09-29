@@ -33,4 +33,14 @@ public class RestfulAutoConfiguration {
     public FaviconConfiguration faviconConfiguration() {
         return new FaviconConfiguration();
     }
+
+    @Bean
+    public RestfulProperties restfulProperties() {
+        return new RestfulProperties();
+    }
+
+    @Bean
+    public RestfulProperties.Ip2regionProperties ip2regionProperties() {
+        return new RestfulProperties.Ip2regionProperties();
+    }
 }
