@@ -43,4 +43,9 @@ public class RestfulAutoConfiguration {
     public RestfulProperties.Ip2regionProperties ip2regionProperties() {
         return new RestfulProperties.Ip2regionProperties();
     }
+
+    @Bean
+    public JacksonConfiguration jacksonConfiguration() {
+        return new JacksonConfiguration();
+    }
 }
