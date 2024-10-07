@@ -27,4 +27,9 @@ public class BusinessException extends RuntimeException {
         this.message = message;
     }
 
+    public BusinessException(IError error) {
+        super(error.message());
+        this.code = error.code();
+        this.message = error.message();
+    }
 }
