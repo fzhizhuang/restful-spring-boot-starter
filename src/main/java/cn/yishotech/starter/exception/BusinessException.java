@@ -21,9 +21,9 @@ public class BusinessException extends RuntimeException {
         this(HttpCode.BUSINESS_EXCEPTION, message);
     }
 
-    public BusinessException(HttpCode httpCode, String message) {
+    public BusinessException(IError error, String message) {
         super(message);
-        this.code = httpCode.getCode();
+        this.code = error.code();
         this.message = message;
     }
 

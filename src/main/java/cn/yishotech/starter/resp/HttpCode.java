@@ -5,6 +5,7 @@
  */
 package cn.yishotech.starter.resp;
 
+import cn.yishotech.starter.exception.IError;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -16,7 +17,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum HttpCode {
+public enum HttpCode implements IError {
 
     SUCCESS(200, "success"),
     UNAUTHORIZED(401, "unauthorized"),
@@ -37,4 +38,14 @@ public enum HttpCode {
 
     private final Integer code;
     private final String message;
+
+    @Override
+    public Integer code() {
+        return code;
+    }
+
+    @Override
+    public String message() {
+        return message;
+    }
 }

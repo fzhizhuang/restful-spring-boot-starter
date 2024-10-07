@@ -5,6 +5,7 @@
  */
 package cn.yishotech.starter.resp;
 
+import cn.yishotech.starter.exception.IError;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -71,8 +72,8 @@ public class R<T> implements Serializable {
      * @param <T>      数据泛型
      * @return 响应数据
      */
-    public static <T> R<T> fail(HttpCode httpCode) {
-        return fail(httpCode.getCode(), httpCode.getMessage());
+    public static <T> R<T> fail(IError httpCode) {
+        return fail(httpCode.code(), httpCode.message());
     }
 
     /**
@@ -83,8 +84,8 @@ public class R<T> implements Serializable {
      * @param <T>      数据泛型
      * @return 响应数据
      */
-    public static <T> R<T> fail(HttpCode httpCode, String message) {
-        return fail(httpCode.getCode(), message);
+    public static <T> R<T> fail(IError httpCode, String message) {
+        return fail(httpCode.code(), message);
     }
 
     public static <T> R<T> fail(Integer code, String message) {
