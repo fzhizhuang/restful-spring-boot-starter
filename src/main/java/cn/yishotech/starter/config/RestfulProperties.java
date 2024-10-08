@@ -34,14 +34,4 @@ public class RestfulProperties {
         private String location = "classpath:ip2region/ip2region.xdb";
     }
 
-    @Data
-    @Configuration
-    @ConfigurationProperties(prefix = "restful.mail")
-    public static class MailAutoProperties {
-        /**
-         * 是否开启发送邮件服务
-         */
-        private boolean enabled = false;
-    }
-
 }
