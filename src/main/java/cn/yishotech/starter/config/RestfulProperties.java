@@ -32,7 +32,16 @@ public class RestfulProperties {
          * ip2region.db 文件路径，默认： classpath:ip2region/ip2region.db
          */
         private String location = "classpath:ip2region/ip2region.xdb";
+    }
 
+    @Data
+    @Configuration
+    @ConfigurationProperties(prefix = "restful.mail")
+    public static class MailAutoProperties {
+        /**
+         * 是否开启发送邮件服务
+         */
+        private boolean enabled = false;
     }
 
 }
