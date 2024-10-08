@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.mail.MailProperties;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
@@ -25,6 +26,7 @@ import java.util.Map;
  * <p>创建时间:2024/10/07 18:12</p>
  */
 @Slf4j
+@Component
 public class MailUtil {
 
     @Resource
