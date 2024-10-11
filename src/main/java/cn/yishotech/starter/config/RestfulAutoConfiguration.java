@@ -7,8 +7,6 @@ package cn.yishotech.starter.config;
 
 import cn.yishotech.starter.handler.GlobalExceptionHandler;
 import cn.yishotech.starter.handler.ResponseResultHandler;
-import cn.yishotech.starter.utils.MailUtil;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -49,12 +47,6 @@ public class RestfulAutoConfiguration {
     @Bean
     public JacksonConfiguration jacksonConfiguration() {
         return new JacksonConfiguration();
-    }
-
-    @Bean
-    @ConditionalOnProperty(prefix = "spring.mail", value = "host")
-    public MailUtil mailUtil() {
-        return new MailUtil();
     }
 
 
