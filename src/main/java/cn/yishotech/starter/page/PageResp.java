@@ -31,10 +31,10 @@ public class PageResp<T> {
     @Schema(description = "总记录数")
     private long total;
     @Schema(description = "当前页数")
-    private int pageNum;
+    private long pageNum;
     @Schema(description = "每页记录数")
-    private int pageSize;
+    private long pageSize;
     @Schema(description = "总页数")
-    private int pages;
+    private long pages;
 
 }
