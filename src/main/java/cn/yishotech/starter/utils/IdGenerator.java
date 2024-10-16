@@ -31,7 +31,6 @@ public class IdGenerator {
         try {
             // 获取本机的IP地址编码
             workerId = NetUtil.ipv4ToLong(NetUtil.getLocalhostStr()) % 31;
-            log.info("当前机器的workerId:{}", workerId);
             snowflake = IdUtil.getSnowflake(workerId, dataCenterId);
         } catch (Exception e) {
             log.warn("当前机器的workerId获取失败", e);

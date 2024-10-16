@@ -65,7 +65,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler({IllegalArgumentException.class})
     public R<Void> badRequestException(IllegalArgumentException e) {
-        log.error("参数格式不合法：{}", e.getMessage());
+        log.error("参数格式不合法：{}", e.getMessage(), e);
         String errorMsg = String.format("%s:%s", HttpCode.INVALID_ARGUMENT.getMessage(), e.getMessage());
         return R.fail(HttpCode.INVALID_ARGUMENT, errorMsg);
     }
@@ -102,7 +102,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(NullPointerException.class)
     public R<Void> handleTypeMismatchException(NullPointerException e) {
-        log.error("空指针异常，{}", e.getMessage());
+        log.error("空指针异常，{}", e.getMessage(), e);
         String errorMsg = String.format("%s:%s", HttpCode.INTERNAL_SERVER_ERROR.getMessage(), e.getMessage());
         return R.fail(HttpCode.INTERNAL_SERVER_ERROR, errorMsg);
     }

@@ -6,7 +6,10 @@
 package cn.yishotech.starter.page;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * <p>类路径:cn.yishotech.starter.request.PageRequest</p>
@@ -15,28 +18,17 @@ import lombok.Data;
  * <p>创建时间:2024/10/12 02:21</p>
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Schema(description = "分页请求")
 public class PageRequest {
 
     @Schema(description = "页码, 默认第一页")
+    @Builder.Default
     private Integer pageNum = 1;
 
     @Schema(description = "每页显示条数, 默认10条")
+    @Builder.Default
     private Integer pageSize = 10;
-
-    public void  setPageNum(Integer pageNum) {
-        if (pageNum == null || pageNum < 1) {
-            this.pageNum = 1;
-        } else {
-            this.pageNum = pageNum;
-        }
-    }
-
-    public void  setPageSize(Integer pageSize) {
-        if (pageSize == null || pageSize < 1) {
-            this.pageSize = 10;
-        } else {
-            this.pageSize = pageSize;
-        }
-    }
 }
