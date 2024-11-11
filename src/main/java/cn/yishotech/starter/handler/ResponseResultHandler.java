@@ -48,6 +48,7 @@ public class ResponseResultHandler implements ResponseBodyAdvice<Object> {
         } else if (Objects.isNull(body)) {
             return R.success();
         } else if (body instanceof String) {
+            response.getHeaders().set("Content-Type", MediaType.APPLICATION_JSON_UTF8_VALUE);
             return new ObjectMapper().writeValueAsString(R.success(body));
         } else {
             return R.success(body);
